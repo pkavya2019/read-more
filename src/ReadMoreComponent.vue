@@ -32,27 +32,22 @@ export default {
       default: 100
     }
   },
-
-  data() {
+  data: function(){
     return {
       isReadMore: false
     };
   },
-
   computed: {
-    formattedString() {
+    formattedString: function formattedString() {
       var val_container = this.text;
-
       if (!this.isReadMore && this.text.length > this.maxChars) {
         val_container = val_container.substring(0, this.maxChars) + "...";
       }
-
       return val_container;
     }
   },
-
   methods: {
-    triggerReadMore(e, b) {
+    triggerReadMore: function triggerReadMore(e, b) {
       if (this.link == "#") {
         e.preventDefault();
       }
